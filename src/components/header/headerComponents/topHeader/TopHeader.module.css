@@ -1,0 +1,57 @@
+.topHeader {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topTextDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 550px;
+    height: 24px;
+}
+
+.text1 {
+    line-height: 21px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #FAFAFA;
+}
+
+.text2 {
+    font-family: 'poppins', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.text2:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.language {
+    position: absolute;
+    right: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 78px;
+    height: 24px;
+}
+
+.language p {
+    font-family: 'poppins', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #FAFAFA;
+}

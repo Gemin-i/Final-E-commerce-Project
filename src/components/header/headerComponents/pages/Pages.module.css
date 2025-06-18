@@ -1,0 +1,40 @@
+.ul li {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.ul {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  list-style: none;
+}
+
+.ul a {
+  display: block;
+}
+
+.route {
+  display: block;
+  border-style: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.currentRoute {
+  display: block;
+  border-style: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  line-height: 21.2px;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}

@@ -1,0 +1,20 @@
+.container {
+    margin-left: 120px;
+    margin-top: 140px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: flex-start;
+    width: 1170px;
+    height: 103px;
+    margin-right: 120px;
+}
+
+.container3 {
+    width: 600px;
+    height: 103px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

@@ -1,0 +1,19 @@
+.profileButton {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0;
+    position: relative;
+}
+
+.profileButton:hover {
+    cursor: pointer;
+}
+
+.profileImg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1px;
+}

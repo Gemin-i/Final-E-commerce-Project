@@ -1,0 +1,47 @@
+
+
+
+.headerDiv {
+    width: 100%;
+    max-width: calc(100% - 240px);
+    margin: 0 auto;
+    height: 95px;
+    display: flex;
+    padding-top: 40px;
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+    width: 100%;
+    gap: 20px;
+}
+
+.textRoutes {
+    display: flex;
+    width: 645px;
+    height: 24px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.searchIconRoutes {
+    width: 395px;
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 128px;
+    height: 32px;
+}
+

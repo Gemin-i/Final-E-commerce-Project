@@ -1,0 +1,48 @@
+.titlesDiv {
+    padding-top: 40px;
+    padding-right: 15px;
+    border: none;
+    border-right: solid 0.5px rgba(0, 0, 0, 0.4);
+}
+
+.titlesDiv2 {
+    width: 217px;
+    height: 344px;
+}
+
+.fashions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.li {
+    width: 217px;
+    height: 24px;
+}
+.titles {
+    width: 142px;
+    height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: black;
+}
+
+.imgDiv {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}

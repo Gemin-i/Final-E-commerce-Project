@@ -1,0 +1,8 @@
+.titleSlider {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    max-width: calc(100% - 240px);
+    margin: 0 auto;
+}
