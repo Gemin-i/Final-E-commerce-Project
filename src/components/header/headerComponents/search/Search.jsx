@@ -10,7 +10,7 @@ function Search() {
       <div className={styles.searchDiv}>
         <input
           type="text"
-          vallue={inputValue}
+          value={inputValue}
           placeholder="What are you looking for?"
           className={styles.searchBar}
           onChange={(e) => setInputValue(e.target.value)}

@@ -4,14 +4,16 @@ import { memo, use, useEffect, useState } from 'react';
 
 function Timer() {
 
-  const [updateTime, setUpdateTime] = useState(1);
+  const [updateTime, setUpdateTime] = useState(true);
 
     useEffect(() => {
-      updateTime && setTimeout(() => {
-        setUpdateTime(prev => prev + 1)
+      const timeout = setTimeout(() => {
+        setUpdateTime(prev => !prev);
+        console.log('Timer updated');
+        
       }, 1000)
 
-      return () => setUpdateTime(0)
+      return () => clearTimeout(timeout);
 
     }, [updateTime])
 
