@@ -17,7 +17,7 @@ function Timer() {
 
     }, [updateTime])
 
-    const endTime = new Date('2025-06-21T23:59:59Z').getTime(); 
+    const endTime = new Date('2025-06-25T00:00:01Z').getTime(); 
     const now = Date.now() 
     const timeLeft = endTime - now;
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));  
@@ -28,19 +28,23 @@ function Timer() {
     const time = [days, hours, minutes, seconds]
 
     return (
-          <div className={styles.timer}>
-            {timeName.map((name, index) => (
-                <>
-                    <div className={styles.timeDiv}>
-                        <p className={styles.timeName}>{name}</p>
-                        <p className={styles.time}>{time[index] < 10? `0${time[index]}` : time[index]}</p>
-                    </div>
-                    <div>{index < 3 ? <p className={styles.colon}>:</p> : ''}</div>
-                </>
-            ))}
-            
+      <div className={styles.timer}>
+        {timeName.map((name, index) => (
+          <div className={styles.invisibleDiv} key={name}>
+            <div className={styles.timeDiv} key={name}>
+              <p className={styles.timeName}>{name}</p>
+              <p className={styles.time}>
+                {time[index] < 10 ? `0${time[index]}` : time[index]}
+              </p>
+            </div>
+            {index < 3 && (
+              <div>
+                <p className={styles.colon}>:</p>
+              </div>
+            )}
           </div>
-        
+        ))}
+      </div>
     );
 }
 

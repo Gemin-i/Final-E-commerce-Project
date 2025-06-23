@@ -1,4 +1,4 @@
-import { memo, use, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import Glide from "@glidejs/glide";
 import "@glidejs/glide/dist/css/glide.core.min.css";
 import styles from "./Glide.module.css";
@@ -12,7 +12,7 @@ function Carousel() {
       autoplay: 3000,
       animationDuration: 1000,
       hoverpause: true,
-      gap: 10,
+      gap: 20,
     });
 
     glide.on("run", () => {
@@ -36,7 +36,7 @@ function Carousel() {
       <div className={`glide__track ${styles.size}`} data-glide-el="track">
         <ul className={`glide__slides ${styles.size}`}>
           {imgSources.map((src, index) => (
-            <li key={src} className={`glide__slide ${styles.size}`}>
+            <li key={src} className={`glide__slide ${styles.size} ${styles.slide}`}>
               <img src={src} alt={index} />
             </li>
           ))}

@@ -10,9 +10,12 @@
   height: 100%;
   object-fit: cover;
 }
+.slide {
+  background-color: black;
+}
 
 .carousel {
-  background-color: rgb(87, 104, 104);
+ 
   position: relative;
   z-index: 1;
   right: 1px;
