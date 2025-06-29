@@ -8,16 +8,14 @@ function Timer() {
 
     useEffect(() => {
       const timeout = setTimeout(() => {
-        setUpdateTime(prev => !prev);
-        console.log('Timer updated');
-        
+        setUpdateTime(prev => !prev);      
       }, 1000)
 
       return () => clearTimeout(timeout);
 
     }, [updateTime])
 
-    const endTime = new Date('2025-06-25T00:00:01Z').getTime(); 
+    const endTime = new Date('2025-06-30T00:00:01Z').getTime(); 
     const now = Date.now() 
     const timeLeft = endTime - now;
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));  

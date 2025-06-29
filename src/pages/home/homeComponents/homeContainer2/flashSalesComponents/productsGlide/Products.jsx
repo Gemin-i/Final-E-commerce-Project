@@ -12,6 +12,8 @@ import monitor from "../../../../../../assets/imgs/home/homeContainer2/glide/pro
 import chair from "../../../../../../assets/imgs/home/homeContainer2/glide/products/chair.svg";
 import leftArrow from "../../../../../../assets/imgs/home/homeContainer2/glide/leftArrow.svg";
 import rightArrow from "../../../../../../assets/imgs/home/homeContainer2/glide/rightArrow.svg";
+import Rating from "./glideComponents/rating/Rating";
+import LoadAll from "./glideComponents/loadAll/LoadAll";
 
 function Products() {
   const perview = (window.innerWidth - 90) / 300;
@@ -45,54 +47,58 @@ function Products() {
   ];
 
   return (
-    <div className={`glide-2 ${styles.glide2}`}>
-      <div className="glide__track" data-glide-el="track">
-        <ul className={`glide__slides ${styles.slides}`}>
-          {products.map((product, index) => (
-            <li key={product.id} className={`glide__slide ${styles.slide}`}>
-              <div className={styles.imgContainer}>
-                <Link className={styles.link} to={`/product/${index}`}>
-                  <img
-                    className={styles.productImg}
-                    src={product.img}
-                    alt={product.name}
-                  />
+    <div>
+      <div className={`glide-2 ${styles.glide2}`}>
+        <div className="glide__track" data-glide-el="track">
+          <ul className={`glide__slides ${styles.slides}`}>
+            {products.map((product, index) => (
+              <li key={product.id} className={`glide__slide ${styles.slide}`}>
+                <div className={styles.imgContainer}>
+                  <Link className={styles.link} to={`/product/${index}`}>
+                    <img
+                      className={styles.productImg}
+                      src={product.img}
+                      alt={product.name}
+                    />
+                  </Link>
+                  <div className={styles.addToCart}>
+                    <p>Add To Cart</p>
+                  </div>
+                  <div className={styles.discountPercent}>
+                    <p>{product.percent}</p>
+                  </div>
+                  <div className={styles.buttons}>
+                    <div className={styles.button}>
+                      <img className={styles.heart} src={heart} alt="wish" />
+                    </div>
+                    <div className={styles.button}>
+                      <img className={styles.eye} src={eye} alt="view" />
+                    </div>
+                  </div>
+                </div>
+                <Link className={styles.link2} to={`product/${product.id}`}>
+                  <p className={styles.productName}>{product.name}</p>
+                  <p>{isHovered}</p>
                 </Link>
-                <div className={styles.addToCart}>
-                  <p>Add To Cart</p>
+                <div className={styles.prices}>
+                  <p className={styles.priceAfter}>{product.after}</p>
+                  <p className={styles.priceBefore}>{product.before}</p>
                 </div>
-                <div className={styles.discountPercent}>
-                  <p>{product.percent}</p>
-                </div>
-                <div className={styles.buttons}>
-                  <div className={styles.button}>
-                    <img className={styles.heart} src={heart} alt="wish" />
-                  </div>
-                  <div className={styles.button}>
-                    <img className={styles.eye} src={eye} alt="view" />
-                  </div>
-                </div>
-              </div>
-              <Link className={styles.link2} to={`product/${product.id}`}>
-                <p className={styles.productName}>{product.name}</p>
-                <p>{isHovered}</p>
-              </Link>
-              <div className={styles.prices}>
-                <p className={styles.priceAfter}>{product.after}</p>
-                <p className={styles.priceBefore}>{product.before}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+                <Rating/>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.controls} data-glide-el="controls">
+          <button className={styles.control} data-glide-dir="<">
+            <img src={leftArrow} alt="back" />
+          </button>
+          <button className={styles.control} data-glide-dir=">">
+            <img src={rightArrow} alt="forwards" />
+          </button>
+        </div>
       </div>
-      <div className={styles.controls} data-glide-el="controls">
-        <button className={styles.control} data-glide-dir="<">
-          <img src={leftArrow} alt="back" />
-        </button>
-        <button className={styles.control} data-glide-dir=">">
-          <img src={rightArrow} alt="forwards" />
-        </button>
-      </div>
+      <LoadAll />
     </div>
   );
 }
