@@ -7,9 +7,6 @@ import Header from "../components/header/Header";
 
 function Layout() {
 
-    
-    
-
     return (
         <div className={styles.layout}>
             <header className={styles.header}>

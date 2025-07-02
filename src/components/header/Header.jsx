@@ -14,7 +14,7 @@ import styles from "./Header.module.css"
 import TopHeader from "./headerComponents/topHeader/TopHeader.jsx";
 import Search from "./headerComponents/search/Search.jsx";
 import WishlistButton from "./headerComponents/wishlistButton/WishlistButton.jsx";
-import CartButton from "./headerComponents/cartRoute/CartButton.jsx";
+import CartButton from "./headerComponents/cartButton/CartButton.jsx";
 import ProfileButton from "./headerComponents/profile/ProfileButton.jsx";
 
 

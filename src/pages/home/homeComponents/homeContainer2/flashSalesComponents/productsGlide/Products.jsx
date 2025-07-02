@@ -16,7 +16,7 @@ import Rating from "./glideComponents/rating/Rating";
 import LoadAll from "./glideComponents/loadAll/LoadAll";
 
 function Products() {
-  const perview = (window.innerWidth - 90) / 300;
+  const perview = (window.innerWidth - 210) / 300;
   console.log(perview);
 
   const [isHovered, setIsHovered] = useState(false);

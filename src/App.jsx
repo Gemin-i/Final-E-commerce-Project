@@ -10,6 +10,8 @@ import Exclusive from './pages/exclusive/Exclusive.jsx'
 import UserProvider from './context/context.jsx'
 import Wishlist from './pages/wishlist/Wishlist.jsx'
 
+import Category from './pages/category/Category.jsx'
+
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
               <Route path="/about" element={<About />}></Route>
               <Route path="/signUp" element={<SignUp />}></Route>
               <Route path="/wishlist" element={<Wishlist/>}></Route>
+              <Route path="/category/:name" element={<Category />}></Route>
             </Route>
           </Routes>
         </Router>
