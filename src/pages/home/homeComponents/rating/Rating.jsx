@@ -1,7 +1,7 @@
-import fullStar from "../../../../../../../../assets/imgs/home/homeContainer2/glide/fullStar.svg";
-import firstHalfStar from "../../../../../../../../assets/imgs/home/homeContainer2/glide/firstHalfStar.svg";
-import secondHalfStar from "../../../../../../../../assets/imgs/home/homeContainer2/glide/secondHalfStar.svg";
-import emptyStar from "../../../../../../../../assets/imgs/home/homeContainer2/glide/emptyStar.svg";
+import fullStar from "../../../../assets/imgs/home/homeContainer2/glide/fullStar.svg";
+import firstHalfStar from "../../../../assets/imgs/home/homeContainer2/glide/firstHalfStar.svg";
+import secondHalfStar from "../../../../assets/imgs/home/homeContainer2/glide/secondHalfStar.svg";
+import emptyStar from "../../../../assets/imgs/home/homeContainer2/glide/emptyStar.svg";
 import styles from "./Rating.module.css";
 import { memo } from "react";
 

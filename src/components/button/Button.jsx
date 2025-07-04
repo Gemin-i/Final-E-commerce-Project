@@ -1,9 +1,12 @@
 import { memo } from "react"
 import styles from "./Button.module.css"
+import { Link } from "react-router-dom"
 
-function Button({ children, handleClick = () => {}, className}) {
+function Button({ children, handleClick = () => {}, className, route}) {
     return (
-        <button className={ styles[className] } onClick={() => handleClick(children)}>{children}</button>
+        <Link to={route} className={ styles.link } onClick={() => handleClick(children)}>
+          <img className={styles[ className ]} src={children} alt="" />
+        </Link>
     )
 }
 

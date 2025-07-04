@@ -125,56 +125,6 @@
   cursor: pointer;
 }
 
-.productName {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #000000;
-  text-decoration: none;
-  padding-top: 16px;
-}
-
-.link2 {
-  text-decoration: none;
-}
-
-.prices {
-  display: flex;
-  align-items: center;
-  padding-top: 8px;
-  gap: 8px;
-  height: 24px;
-}
-
-.priceBefore {
-  display: inline-block;
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.priceBefore::after {
-  content: "";
-  height: 1.5px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.priceAfter {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #db4444;
-}
-
 .addToCart {
   display: flex;
   justify-content: center;

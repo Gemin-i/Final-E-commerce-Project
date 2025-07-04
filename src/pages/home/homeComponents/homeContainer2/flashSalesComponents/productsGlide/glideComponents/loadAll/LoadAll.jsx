@@ -5,9 +5,9 @@ function LoadAll() {
     return (
       <div className={styles.container}>
         <div className={styles.loadAllDiv}>
-          <div className={styles.loadAll}>
+          <button className={styles.loadAll}>
             <p>View All Products</p>
-          </div>
+          </button>
         </div>
         <div className={styles.border}></div>
       </div>

@@ -4,16 +4,18 @@ import { memo, use, useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import { Link } from "react-router-dom";
 
-import heart from "../../../../../../assets/imgs/home/homeContainer2/glide/heart.svg";
-import eye from "../../../../../../assets/imgs/home/homeContainer2/glide/eye.svg";
+import heart from "../../../../../../assets/imgs/home/heart.svg";
+import eye from "../../../../../../assets/imgs/home/eye.svg";
 import joystick from "../../../../../../assets/imgs/home/homeContainer2/glide/products/joystick.svg";
 import keyboard from "../../../../../../assets/imgs/home/homeContainer2/glide/products/keyboard.svg";
 import monitor from "../../../../../../assets/imgs/home/homeContainer2/glide/products/monitor.svg";
 import chair from "../../../../../../assets/imgs/home/homeContainer2/glide/products/chair.svg";
 import leftArrow from "../../../../../../assets/imgs/home/homeContainer2/glide/leftArrow.svg";
 import rightArrow from "../../../../../../assets/imgs/home/homeContainer2/glide/rightArrow.svg";
-import Rating from "./glideComponents/rating/Rating";
+import Rating from "../../../rating/Rating";
 import LoadAll from "./glideComponents/loadAll/LoadAll";
+import Details from "../../../productDetails/Details";
+import Button from "../../../../../../components/button/Button";
 
 function Products() {
   const perview = (window.innerWidth - 210) / 300;
@@ -37,13 +39,47 @@ function Products() {
     };
   }, []);
 
-  
   const products = [
-    { name: 'HAVIT HV-G92 Gamepad', img: joystick, percent: "-40%", before: "$160", after: "$96", id: 0 },
-    { name: 'IPS LCD Gaming Monitor', img: monitor, percent: "-30%", before: "$400", after: "$280", id: 1 },
-    { name: 'S-Series Comfort Chair', img: chair, percent: "-25%", before: "$320", after: "$240", id: 2 },
-    { name: 'AK-900 Wired Keyboard', img: keyboard, percent: "-35%", before: "$840", after: "$546", id: 3 },
-    { name: 'S-Series Comfort Chair', img: chair, percent: "-25%", before: "$320", after: "$240", id: 4 },
+    {
+      name: "HAVIT HV-G92 Gamepad",
+      img: joystick,
+      percent: "-40%",
+      pastPrice: "$160",
+      price: "$96",
+      id: 0,
+    },
+    {
+      name: "IPS LCD Gaming Monitor",
+      img: monitor,
+      percent: "-30%",
+      pastPrice: "$400",
+      price: "$280",
+      id: 1,
+    },
+    {
+      name: "S-Series Comfort Chair",
+      img: chair,
+      percent: "-25%",
+      pastPrice: "$320",
+      price: "$240",
+      id: 2,
+    },
+    {
+      name: "AK-900 Wired Keyboard",
+      img: keyboard,
+      percent: "-35%",
+      pastPrice: "$840",
+      price: "$546",
+      id: 3,
+    },
+    {
+      name: "S-Series Comfort Chair",
+      img: chair,
+      percent: "-25%",
+      pastPrice: "$320",
+      price: "$240",
+      id: 4,
+    },
   ];
 
   return (
@@ -54,13 +90,13 @@ function Products() {
             {products.map((product, index) => (
               <li key={product.id} className={`glide__slide ${styles.slide}`}>
                 <div className={styles.imgContainer}>
-                  <Link className={styles.link} to={`/product/${index}`}>
+                  <div className={styles.link}>
                     <img
                       className={styles.productImg}
                       src={product.img}
                       alt={product.name}
                     />
-                  </Link>
+                  </div>
                   <div className={styles.addToCart}>
                     <p>Add To Cart</p>
                   </div>
@@ -68,23 +104,12 @@ function Products() {
                     <p>{product.percent}</p>
                   </div>
                   <div className={styles.buttons}>
-                    <div className={styles.button}>
-                      <img className={styles.heart} src={heart} alt="wish" />
-                    </div>
-                    <div className={styles.button}>
-                      <img className={styles.eye} src={eye} alt="view" />
-                    </div>
+                    <Button className={"heart"}>{heart}</Button>
+                    <Button className={"eye"}>{eye}</Button>
                   </div>
                 </div>
-                <Link className={styles.link2} to={`product/${product.id}`}>
-                  <p className={styles.productName}>{product.name}</p>
-                  <p>{isHovered}</p>
-                </Link>
-                <div className={styles.prices}>
-                  <p className={styles.priceAfter}>{product.after}</p>
-                  <p className={styles.priceBefore}>{product.before}</p>
-                </div>
-                <Rating/>
+                <Details product={product} />
+                <Rating />
               </li>
             ))}
           </ul>
