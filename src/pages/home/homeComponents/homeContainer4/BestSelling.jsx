@@ -2,6 +2,7 @@ import { memo } from "react";
 import Texts from "../../../../components/texts/Texts";
 import styles from "./BestSelling.module.css";
 import Products from "./products/Products";
+import LoadAll from "./loadAll/LoadAll";
 
 function BestSelling() {
   return (
@@ -12,7 +13,10 @@ function BestSelling() {
           redText: "This Month",
         }}
       />
-      <Products />
+      <div className={styles.container2}>
+        <Products />
+        <LoadAll />
+      </div>
     </div>
   );
 }

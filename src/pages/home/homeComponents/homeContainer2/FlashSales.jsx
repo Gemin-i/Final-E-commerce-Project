@@ -1,7 +1,7 @@
 import styles from "./flashSales.module.css";
 import { memo } from "react";
 
-import Products from "./flashSalesComponents/productsGlide/products";
+import Products from "../productsGlide/Products";
 import UpperSide from "./flashSalesComponents/upperSide/UpperSide";
 
 

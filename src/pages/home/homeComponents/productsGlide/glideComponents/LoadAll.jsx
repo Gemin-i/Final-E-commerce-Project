@@ -6,7 +6,7 @@ function LoadAll() {
       <div className={styles.container}>
         <div className={styles.loadAllDiv}>
           <button className={styles.loadAll}>
-            <p>View All Products</p>
+            <p>View More Products</p>
           </button>
         </div>
         <div className={styles.border}></div>

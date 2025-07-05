@@ -1,0 +1,24 @@
+.button {
+  width: 160px;
+  height: 56px;
+  position: absolute;
+  border: none;
+  border-radius: 4px;
+  background-color: #db4444;
+  position: absolute;
+  top: -118px;
+  right: 0;
+}
+
+.button p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #fafafa;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #ca0202;
+}
