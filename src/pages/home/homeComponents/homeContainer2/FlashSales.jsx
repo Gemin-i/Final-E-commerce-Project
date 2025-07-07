@@ -4,12 +4,11 @@ import { memo } from "react";
 import Products from "../productsGlide/Products";
 import UpperSide from "./flashSalesComponents/upperSide/UpperSide";
 
-
 function FlashSales() {
   return (
     <div className={styles.container}>
-      <UpperSide/>
-      <Products />
+      <UpperSide />
+      <Products homeContainer2={true}/>
     </div>
   );
 }

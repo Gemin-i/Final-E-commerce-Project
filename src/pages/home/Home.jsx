@@ -1,9 +1,10 @@
 import { memo } from "react";
 import styles from "./Home.module.css";
 import Container1 from "./homeComponents/homeContainer1/Container1";
-import FlashSales from "./homeComponents/homeContainer2/flashSales";
+import FlashSales from "./homeComponents/homeContainer2/FlashSales";
 import Categories from "./homeComponents/homeContainer3/Categories";
 import BestSelling from "./homeComponents/homeContainer4/BestSelling";
+import Explore from "./homeComponents/homeContainer6/Explore";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <FlashSales/>
       <Categories />
       <BestSelling />
+      <Explore />
     </div>
   );
 }
