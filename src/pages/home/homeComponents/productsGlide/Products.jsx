@@ -17,13 +17,13 @@ import LoadAll from "./glideComponents/LoadAll";
 import Details from "../productDetails/Details";
 import Button from "../../../../components/button/Button";
 
-function Products({homeContainer2=false, homeContainer6=false}) {
-
+function Products({ homeContainer2 = false, homeContainer6 = false }) {
   const perview = (window.innerWidth - 210) / 300;
   console.log(perview);
+  const className = homeContainer2 ? "glide2" : "glide5";
 
   useEffect(() => {
-    const glide = new Glide(".glide-2", {
+    const glide = new Glide(className, {
       type: "carousel",
       gap: 30,
       perView: perview,
@@ -38,7 +38,7 @@ function Products({homeContainer2=false, homeContainer6=false}) {
     };
   }, []);
 
-  const products = homeContainer2? [
+  const products = [
     {
       name: "HAVIT HV-G92 Gamepad",
       img: joystick,
@@ -79,7 +79,7 @@ function Products({homeContainer2=false, homeContainer6=false}) {
       price: "$240",
       id: 4,
     },
-  ] : [1,2,3,4];
+  ];
 
   return (
     <div>
