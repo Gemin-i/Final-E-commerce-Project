@@ -39,8 +39,8 @@ function Rating() {
         )}
         {halfStars > 0 && (
           <div className={styles.halfStars}>
-            <img src={firstHalfStar} className={styles.halfStar} alt='half star' />
-            <img src={secondHalfStar} className={styles.halfStar} alt='half star' />
+            <img src={firstHalfStar} className={styles.halfStar1} alt='half star' />
+            <img src={secondHalfStar} className={styles.halfStar2} alt='half star' />
           </div>
         )}
         {[...Array(emptyStars)].map(

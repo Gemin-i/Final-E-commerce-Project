@@ -15,7 +15,7 @@ function Explore() {
           />
         </div>
 
-        <Products />
+        <Products homeContainer6={true}/>
       </div>
     );
 }

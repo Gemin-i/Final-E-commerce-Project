@@ -8,7 +8,7 @@ function FlashSales() {
   return (
     <div className={styles.container}>
       <UpperSide />
-      <Products homeContainer2={true}/>
+      <Products className={"glide2"} homeContainer2={true}/>
     </div>
   );
 }

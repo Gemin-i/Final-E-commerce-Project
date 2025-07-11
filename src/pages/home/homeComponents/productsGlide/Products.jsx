@@ -17,13 +17,25 @@ import LoadAll from "./glideComponents/LoadAll";
 import Details from "../productDetails/Details";
 import Button from "../../../../components/button/Button";
 
-function Products({ homeContainer2 = false, homeContainer6 = false }) {
+import dogFood from "../../../../assets/imgs/home/homeContainer6/dogFood.svg";
+import camera from "../../../../assets/imgs/home/homeContainer6/camera.svg";
+import computer from "../../../../assets/imgs/home/homeContainer6/computer.svg";
+import curologySet from "../../../../assets/imgs/home/homeContainer6/curologySet.svg";
+import jacket from "../../../../assets/imgs/home/homeContainer6/jacket.svg";
+import joystick2 from "../../../../assets/imgs/home/homeContainer6/joystick.svg";
+import sneakers from "../../../../assets/imgs/home/homeContainer6/sneakers.svg";
+import toyCar from "../../../../assets/imgs/home/homeContainer6/toyCar.svg";
+
+function Products({
+  homeContainer2 = false,
+  homeContainer6 = false,
+  className,
+}) {
   const perview = (window.innerWidth - 210) / 300;
-  console.log(perview);
-  const className = homeContainer2 ? "glide2" : "glide5";
+  console.log(className);
 
   useEffect(() => {
-    const glide = new Glide(className, {
+    const glide = new Glide(homeContainer2 ? ".glide2" : ".glide5", {
       type: "carousel",
       gap: 30,
       perView: perview,
@@ -38,52 +50,65 @@ function Products({ homeContainer2 = false, homeContainer6 = false }) {
     };
   }, []);
 
-  const products = [
-    {
-      name: "HAVIT HV-G92 Gamepad",
-      img: joystick,
-      percent: "-40%",
-      pastPrice: "$160",
-      price: "$96",
-      id: 0,
-    },
-    {
-      name: "IPS LCD Gaming Monitor",
-      img: monitor,
-      percent: "-30%",
-      pastPrice: "$400",
-      price: "$280",
-      id: 1,
-    },
-    {
-      name: "S-Series Comfort Chair",
-      img: chair,
-      percent: "-25%",
-      pastPrice: "$320",
-      price: "$240",
-      id: 2,
-    },
-    {
-      name: "AK-900 Wired Keyboard",
-      img: keyboard,
-      percent: "-35%",
-      pastPrice: "$840",
-      price: "$546",
-      id: 3,
-    },
-    {
-      name: "S-Series Comfort Chair",
-      img: chair,
-      percent: "-25%",
-      pastPrice: "$320",
-      price: "$240",
-      id: 4,
-    },
-  ];
+  const products = homeContainer2
+    ? [
+        {
+          name: "HAVIT HV-G92 Gamepad",
+          img: joystick,
+          percent: "-40%",
+          pastPrice: "$160",
+          price: "$96",
+          id: 0,
+        },
+        {
+          name: "IPS LCD Gaming Monitor",
+          img: monitor,
+          percent: "-30%",
+          pastPrice: "$400",
+          price: "$280",
+          id: 1,
+        },
+        {
+          name: "S-Series Comfort Chair",
+          img: chair,
+          percent: "-25%",
+          pastPrice: "$320",
+          price: "$240",
+          id: 2,
+        },
+        {
+          name: "AK-900 Wired Keyboard",
+          img: keyboard,
+          percent: "-35%",
+          pastPrice: "$840",
+          price: "$546",
+          id: 3,
+        },
+        {
+          name: "S-Series Comfort Chair",
+          img: chair,
+          percent: "-25%",
+          pastPrice: "$320",
+          price: "$240",
+          id: 4,
+        },
+      ]
+    : [
+        {
+          name: "Breed Dry Dog Food",
+          img: dogFood,
+          new: true,
+          price: "$300",
+          id: 9,
+          colorOptions: false,
+        },
+      ];
 
   return (
     <div>
-      <div className={`glide-2 ${styles.glide2}`}>
+      <div
+        className={`${homeContainer2 ? "glide2" : "glide5"} ${styles.glide2}`}
+      >
         <div className="glide__track" data-glide-el="track">
           <ul className={`glide__slides ${styles.slides}`}>
             {products.map((product, index) => (
@@ -99,16 +124,28 @@ function Products({ homeContainer2 = false, homeContainer6 = false }) {
                   <div className={styles.addToCart}>
                     <p>Add To Cart</p>
                   </div>
-                  <div className={styles.discountPercent}>
-                    <p>{product.percent}</p>
-                  </div>
+                  {product.percent && (
+                    <div className={styles.discountPercent}>
+                      <p>{product.percent}</p>
+                    </div>
+                  )}
+                  {product.new && (
+                    <div className={styles.new}>
+                      <p>NEW</p>
+                    </div>
+                  )}
                   <div className={styles.buttons}>
                     <Button className={"heart"}>{heart}</Button>
                     <Button className={"eye"}>{eye}</Button>
                   </div>
                 </div>
-                <Details product={product} />
-                <Rating />
+                <div>
+                  <Details
+                    product={product}
+                    homeContainer6={homeContainer6}
+                    homeContainer2={homeContainer2}
+                  />
+                </div>
               </li>
             ))}
           </ul>

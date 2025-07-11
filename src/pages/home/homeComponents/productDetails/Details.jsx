@@ -2,10 +2,11 @@ import { memo } from "react";
 
 import styles from "./Details.module.css"
 import { Link } from "react-router-dom"
+import Rating from "../rating/Rating";
 
 
 
-function Details({product}) {
+function Details({product, homeContainer2=false, homeContainer6=false}) {
     console.log(product.after);
     
     return (
@@ -15,8 +16,12 @@ function Details({product}) {
         </Link>
         <div className={styles.prices}>
           <p className={styles.priceAfter}>{product.price}</p>
-          {product.pastPrice && <p className={styles.priceBefore}>{product.pastPrice}</p>}
+          {product.pastPrice && (
+            <p className={styles.priceBefore}>{product.pastPrice}</p>
+          )}
+          {homeContainer6 && <Rating />}
         </div>
+        {homeContainer2 && <Rating />}
       </>
     );
 }

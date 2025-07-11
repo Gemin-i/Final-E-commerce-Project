@@ -13,7 +13,7 @@ import Details from "../../productDetails/Details";
 import Rating from "../../rating/Rating";
 
 function Products() {
-  const products = [
+  let products = [
     {
       name: "The North Coat",
       img: coat,
@@ -44,6 +44,9 @@ function Products() {
     },
   ];
 
+  const elements = Math.floor((window.innerWidth - 210) / 300);
+  products = products.slice(0, elements);
+
   return (
     <div>
       <ul className={styles.container}>
@@ -60,8 +63,7 @@ function Products() {
                 </Button>
               </div>
             </div>
-            <Details product={product} />
-            <Rating />
+            <Details homeContainer2={true} product={product} />
           </li>
         ))}
       </ul>
