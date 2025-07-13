@@ -1,7 +1,8 @@
 import { memo } from "react";
 import Texts from "../../../../components/texts/Texts";
 import styles from "./Explore.module.css"
-import Products from "../productsGlide/Products";
+import Products from "./carousel/Carousel";
+
 
 function Explore() {
     return (
@@ -15,7 +16,7 @@ function Explore() {
           />
         </div>
 
-        <Products homeContainer6={true}/>
+        <Products/>
       </div>
     );
 }

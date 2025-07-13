@@ -7,7 +7,6 @@ import Rating from "../rating/Rating";
 
 
 function Details({product, homeContainer2=false, homeContainer6=false}) {
-    console.log(product.after);
     
     return (
       <>

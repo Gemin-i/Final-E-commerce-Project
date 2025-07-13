@@ -62,6 +62,9 @@ function Products() {
                   {eye}
                 </Button>
               </div>
+              <div className={styles.addToCart}>
+                <p>Add To Cart</p>
+              </div>
             </div>
             <Details homeContainer2={true} product={product} />
           </li>

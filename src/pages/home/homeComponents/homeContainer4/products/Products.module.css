@@ -27,3 +27,43 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.addToCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 41px;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.addToCart p {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.product:hover .addToCart {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.product:hover .addToCart p {
+  position: static;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
