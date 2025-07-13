@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import profileIcon from "../../../../assets/imgs/header/userDefault.svg"; 
 import clickedProfileIcon from "../../../../assets/imgs/header/userClicked.svg"; 
 import styles from "./ProfileButton.module.css"; 
@@ -8,6 +8,14 @@ function ProfileButton() {
 
     const [clicked , setClicked] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => setClicked(false)
+
+        clicked === true && window.addEventListener("scroll", handleScroll)
+        
+        return () => {window.removeEventListener("scroll", handleScroll)}
+    }, [clicked])
+
     const handleClick = () => {
         setClicked(!clicked)
     }
@@ -15,7 +23,7 @@ function ProfileButton() {
     return (
         <div onClick={handleClick} className={styles.profileButton}>
             <img src={clicked? clickedProfileIcon: profileIcon } alt="profile" className={styles.profileImg}/>
-            { clicked? <Dropdown/>: null }
+            { clicked && <Dropdown/>}
         </div>
     )
 }
