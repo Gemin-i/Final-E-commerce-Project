@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 
 function Button({ children, handleClick = () => {}, className, route}) {
     return (
-        <Link to={route} className={ styles.link } onClick={() => handleClick(children)}>
-          <img className={styles[ className ]} src={children} alt="" />
+        <Link to={route} className={ styles.link } onClick={() => handleClick()}>
+          <img className={styles[ className ]} src={children} alt={children} />
         </Link>
     )
 }

@@ -2,6 +2,10 @@ import styles from './Timer.module.css';
 import { memo, use, useEffect, useState } from 'react';
 
 
+import "swiper/css";
+import "swiper/css/navigation";
+
+
 function Timer() {
 
   const [updateTime, setUpdateTime] = useState(true);
@@ -15,7 +19,7 @@ function Timer() {
 
     }, [updateTime])
 
-    const endTime = new Date('2025-07-14T00:00:01Z').getTime(); 
+    const endTime = new Date('2025-08-14T00:00:01Z').getTime(); 
     const now = Date.now() 
     const timeLeft = endTime - now;
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));  

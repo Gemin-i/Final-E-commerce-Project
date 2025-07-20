@@ -1,8 +1,12 @@
+.container1 {
+    position: relative;
+}
+
 .slide {
   max-width: 270px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
 }
 
 .glide5 {
@@ -14,6 +18,10 @@
 
 .invisDiv {
   display: contents;
+}
+
+.item {
+    height: 351px;
 }
 
 .imgContainer {
@@ -85,7 +93,7 @@
   width: 100px;
   height: 46px;
   position: absolute;
-  top: -85px;
+  top: -67px;
   right: 120px;
   display: flex;
   justify-content: space-between;
@@ -101,6 +109,8 @@
   justify-content: center;
   align-items: center;
 }
+
+
 
 .control:hover {
   cursor: pointer;
@@ -181,3 +191,12 @@
   display: flex;
   gap: 8px;
 }
+
+.swiper-button-prev {
+    display: none !important;
+}
+
+.swiper-button-next {
+    display: none !important;
+}
+  

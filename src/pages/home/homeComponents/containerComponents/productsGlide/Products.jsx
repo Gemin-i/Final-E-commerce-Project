@@ -4,20 +4,19 @@ import { memo, use, useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import { Link } from "react-router-dom";
 
-import heart from "../../../../assets/imgs/home/heart.svg";
-import eye from "../../../../assets/imgs/home/eye.svg";
-import joystick from "../../../../assets/imgs/home/homeContainer2/glide/products/joystick.svg";
-import keyboard from "../../../../assets/imgs/home/homeContainer2/glide/products/keyboard.svg";
-import monitor from "../../../../assets/imgs/home/homeContainer2/glide/products/monitor.svg";
-import chair from "../../../../assets/imgs/home/homeContainer2/glide/products/chair.svg";
-import leftArrow from "../../../../assets/imgs/home/homeContainer2/glide/leftArrow.svg";
-import rightArrow from "../../../../assets/imgs/home/homeContainer2/glide/rightArrow.svg";
+import heart from "../../../../../assets/imgs/home/heart.svg";
+import eye from "../../../../../assets/imgs/home/eye.svg";
+import joystick from "../../../../../assets/imgs/home/homeContainer2/glide/products/joystick.svg";
+import keyboard from "../../../../../assets/imgs/home/homeContainer2/glide/products/keyboard.svg";
+import monitor from "../../../../../assets/imgs/home/homeContainer2/glide/products/monitor.svg";
+import chair from "../../../../../assets/imgs/home/homeContainer2/glide/products/chair.svg";
+import leftArrow from "../../../../../assets/imgs/home/homeContainer2/glide/leftArrow.svg";
+import rightArrow from "../../../../../assets/imgs/home/homeContainer2/glide/rightArrow.svg";
 import LoadAll from "./glideComponents/LoadAll";
 import Details from "../productDetails/Details";
-import Button from "../../../../components/button/Button";
+import Button from "../../../../../components/button/Button";
 
 function Products({}) {
-
   const perview = (window.innerWidth - 210) / 300;
 
   useEffect(() => {
@@ -101,8 +100,12 @@ function Products({}) {
                     <p>{product.percent}</p>
                   </div>
                   <div className={styles.buttons}>
-                    <Button className={"heart"}>{heart}</Button>
-                    <Button className={"eye"}>{eye}</Button>
+                    <Button route={"/wishlist"} className={"heart"}>
+                      {heart}
+                    </Button>
+                    <Button route={"/quickView"} className={"eye"}>
+                      {eye}
+                    </Button>
                   </div>
                 </div>
                 <div>

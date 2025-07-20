@@ -9,8 +9,8 @@ import bookShelf from "../../../../../assets/imgs/home/homeContainer4/bookshelf.
 
 import eye from "../../../../../assets/imgs/home/eye.svg";
 import heart from "../../../../../assets/imgs/home/heart.svg";
-import Details from "../../productDetails/Details";
-import Rating from "../../rating/Rating";
+import Details from "../../containerComponents/productDetails/Details";
+import Rating from "../../containerComponents/rating/Rating";
 
 function Products() {
   let products = [
