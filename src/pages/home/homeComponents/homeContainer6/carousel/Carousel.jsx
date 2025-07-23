@@ -8,8 +8,6 @@ import { memo, use, useEffect, useState } from "react";
 import styles from "./Carousel.module.css";
 import ColorOption from "../../containerComponents/colorOption/ColorOption";
 
-import heart from "../../../../../assets/imgs/home/heart.svg";
-import eye from "../../../../../assets/imgs/home/eye.svg";
 import leftArrow from "../../../../../assets/imgs/home/homeContainer2/glide/leftArrow.svg";
 import rightArrow from "../../../../../assets/imgs/home/homeContainer2/glide/rightArrow.svg";
 import LoadAll from "./carouselComponents/LoadAll";
@@ -23,18 +21,20 @@ import curologySet from "../../../../../assets/imgs/home/homeContainer6/curology
 import jacket from "../../../../../assets/imgs/home/homeContainer6/jacket.svg";
 import joystick from "../../../../../assets/imgs/home/homeContainer6/joystick.svg";
 import sneakers from "../../../../../assets/imgs/home/homeContainer6/sneakers.svg";
+import redSneakers from "../../../../../assets/imgs/home/homeContainer6/sneakersRed.png";
 import toyCar from "../../../../../assets/imgs/home/homeContainer6/toyCar.svg";
+import blue from "../../../../../assets/imgs/home/homeContainer6/blue.jpeg";
 import joystick2 from "../../../../../assets/imgs/home/homeContainer2/glide/products/joystick.svg";
 import keyboard from "../../../../../assets/imgs/home/homeContainer2/glide/products/keyboard.svg";
 import monitor from "../../../../../assets/imgs/home/homeContainer2/glide/products/monitor.svg";
 import chair from "../../../../../assets/imgs/home/homeContainer2/glide/products/chair.svg";
+import Product from "./carouselComponents/product/Product";
 
 function Products({}) {
+  const [currentImg, setCurrentImg] = useState("");
+
   const perview = (window.innerWidth - 210) / 300;
 
-  const handleClick = (e) => {
-    e.stopPropagation()
-  }
   const products = [
     [
       {
@@ -65,7 +65,7 @@ function Products({}) {
       },
       {
         name: "Jr. Zoom Soccer Cleats",
-        img: sneakers,
+        img: { "#EEFF61": sneakers, "#DB4444": redSneakers },
         new: false,
         price: "$79",
         id: 12,
@@ -101,7 +101,7 @@ function Products({}) {
       },
       {
         name: "Electric Car For Kids",
-        img: toyCar,
+        img: { "#FB1314": toyCar, "#0000FF": blue },
         new: true,
         price: "$399",
         id: 16,
@@ -171,51 +171,7 @@ function Products({}) {
         {products.map((product, index) => (
           <SwiperSlide key={product[0].id} className={styles.slide}>
             {product.map((product, index) => (
-              <div className={styles.item} key={product.id}>
-                <div className={styles.imgContainer}>
-                  <div className={styles.imgContainer2}>
-                    <div>
-                      <img
-                        className={styles.productImg}
-                        src={product.img}
-                        alt={product.name}
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.addToCart}>
-                    <p>Add To Cart</p>
-                  </div>
-                  {product.new && (
-                    <div className={styles.new}>
-                      <p>NEW</p>
-                    </div>
-                  )}
-                  <div
-                    className={styles.buttons}
-                    onClick={() => console.log("yes")}
-                  >
-                    <Button
-                      route={"/wishlist"}
-                     
-                      className={"heart"}
-                    >
-                      {heart}
-                    </Button>
-                    <Button
-                      route={"/view"}
-                      
-                      className={"eye"}
-                    >
-                      {eye}
-                    </Button>
-                  </div>
-                </div>
-                <Details product={product} homeContainer6={true} />
-                {product.colorOptions && (
-                  <ColorOption colors={product.colorOptions} />
-                )}
-              </div>
+              <Product key={product.id} product={product} />
             ))}
           </SwiperSlide>
         ))}
