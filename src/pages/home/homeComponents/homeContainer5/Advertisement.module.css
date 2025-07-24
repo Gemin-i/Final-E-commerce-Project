@@ -1,0 +1,27 @@
+.container1 {
+    width: 100%;
+    max-width: calc(100% - 240px);
+    margin: 0 auto;
+    aspect-ratio: 117 / 50;
+    background-color: #000000;
+    margin-top: 150px;
+    position: relative;
+}
+
+.container2 {
+    width: 90.4%;
+    max-width: calc(100% - 112px);
+    height: 72.4%; 
+    max-height: calc(100% - 138px);
+    position: absolute;
+    top: 69px;
+    left: 56px;
+    display: flex;
+    gap: 26px;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}

@@ -7,7 +7,7 @@ import heart from "../../../../../../../assets/imgs/home/heart.svg";
 import eye from "../../../../../../../assets/imgs/home/eye.svg";
 import ColorOption from "../../../../containerComponents/colorOption/ColorOption";
 
-function Product({product, }) {
+function Product({ product }) {
 
   const firstImg = product.colorOptions && product.colorOptions[0]
   const [img, setImg] = useState(firstImg)

@@ -5,14 +5,16 @@ import FlashSales from "./homeComponents/homeContainer2/FlashSales";
 import Categories from "./homeComponents/homeContainer3/Categories";
 import BestSelling from "./homeComponents/homeContainer4/BestSelling";
 import Explore from "./homeComponents/homeContainer6/Explore";
+import Advertisement from "./homeComponents/homeContainer5/Advertisement";
 
 function Home() {
   return (
     <div className={styles.homeDiv}>
-      <Container1/>
-      <FlashSales/>
+      <Container1 />
+      <FlashSales />
       <Categories />
       <BestSelling />
+      <Advertisement />
       <Explore />
     </div>
   );

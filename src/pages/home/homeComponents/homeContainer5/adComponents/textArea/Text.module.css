@@ -1,0 +1,14 @@
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.text2 {
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 550;
+    line-height: 60px;
+    color: #FAFAFA;
+    width: 430px;
+}
