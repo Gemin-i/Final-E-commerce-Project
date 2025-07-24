@@ -13,14 +13,13 @@ function Pages() {
       {names.map((name, index) => {
         return (
           <li key={name}>
-            <Link
-              to={paths[index]}
-              className={
-                currentLoc === paths[index] ? styles.currentRoute : styles.route
-              }
-            >
-              {name}
-            </Link>
+            {currentLoc === paths[index] ? (
+              <span className={styles.currentRoute}>{name}</span>
+            ) : (
+              <Link to={paths[index]} className={styles.route}>
+                {name}
+              </Link>
+            )}
           </li>
         );
       })}
