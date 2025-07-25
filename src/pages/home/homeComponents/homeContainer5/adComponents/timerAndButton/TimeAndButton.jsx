@@ -1,5 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import styles from "./TimerAndButton.module.css";
+import { Link } from "react-router-dom";
 
 function TimerAndButton() {
   const [updateTime, setUpdateTime] = useState(true);
@@ -25,17 +26,20 @@ function TimerAndButton() {
   const time = [days, hours, minutes, seconds];
 
   return (
-    <div className={styles.timer}>
-      {timeName.map((name, index) => (
-        <div className={styles.timeDiv} key={name}>
-          <div className={styles.timeAndNameDiv}>
-            <p className={styles.time}>
-              {time[index] < 10 ? `0${time[index]}` : time[index]}
-            </p>
-            <p className={styles.timeName}>{name}</p>
+    <div className={styles.container1}>
+      <div className={styles.timer}>
+        {timeName.map((name, index) => (
+          <div className={styles.timeDiv} key={name}>
+            <div className={styles.timeAndNameDiv}>
+              <p className={styles.time}>
+                {time[index] < 10 ? `0${time[index]}` : time[index]}
+              </p>
+              <p className={styles.timeName}>{name}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <Link className={styles.buy} to="/view"> <p>Buy Now!</p> </Link>
     </div>
   );
 }

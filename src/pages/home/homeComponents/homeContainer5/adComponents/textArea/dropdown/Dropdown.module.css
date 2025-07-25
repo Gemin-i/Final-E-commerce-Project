@@ -5,3 +5,7 @@
     line-height: 20px;
     color: #00FF66;
 }
+
+.text:hover {
+    cursor: pointer;
+}
