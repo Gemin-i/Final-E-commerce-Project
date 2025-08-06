@@ -6,6 +6,7 @@ import Categories from "./homeComponents/homeContainer3/Categories";
 import BestSelling from "./homeComponents/homeContainer4/BestSelling";
 import Explore from "./homeComponents/homeContainer6/Explore";
 import Advertisement from "./homeComponents/homeContainer5/Advertisement";
+import New from "./homeComponents/homeContainer7/New";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <BestSelling />
       <Advertisement />
       <Explore />
+      <New />
     </div>
   );
 }
