@@ -41,7 +41,7 @@ function Carousel() {
         speed="1000"
         autoplay={{
           delay: 2000, // time before it changes
-          disableOnInteraction: true,
+          disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
         className={`swiper ${styles.size} ${styles.glide5}`}

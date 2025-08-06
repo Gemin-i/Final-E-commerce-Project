@@ -41,7 +41,7 @@
   position: absolute !important;
   bottom: 10px !important;
   z-index: 2 !important;
-  width: calc(var(--slides-count) * 19px) !important;
+  width: calc(var(--slides-count) * 21px) !important;
   height: 19px !important;
   left: calc(50% - 53px) !important;
   display: flex;

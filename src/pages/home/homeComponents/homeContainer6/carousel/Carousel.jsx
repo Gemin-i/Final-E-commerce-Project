@@ -157,12 +157,11 @@ function Products({}) {
         </div>
       </div>
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[ Navigation ]}
         navigation={{
           nextEl: ".button-next",
           prevEl: ".button-prev",
         }}
-        pagination={{ clickable: true }}
         spaceBetween={30}
         slidesPerView={perview}
         loop
