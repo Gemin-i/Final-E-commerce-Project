@@ -18,9 +18,6 @@ function Rating() {
     });
   }
 
-  console.log(totalRating, personCount);
-  
-
   const averageRating = totalRating / personCount;
   const roundedRating = Math.round(averageRating * 10) / 10;
 
@@ -33,20 +30,26 @@ function Rating() {
       <div className={styles.stars}>
         {[...Array(fullStars)].map(
           (_, index) =>
-            fullStars > 0 && (
-              <img src={fullStar} key={index} alt='full star' />
-            )
+            fullStars > 0 && <img src={fullStar} key={index} alt="full star" />
         )}
         {halfStars > 0 && (
           <div className={styles.halfStars}>
-            <img src={firstHalfStar} className={styles.halfStar1} alt='half star' />
-            <img src={secondHalfStar} className={styles.halfStar2} alt='half star' />
+            <img
+              src={firstHalfStar}
+              className={styles.halfStar1}
+              alt="half star"
+            />
+            <img
+              src={secondHalfStar}
+              className={styles.halfStar2}
+              alt="half star"
+            />
           </div>
         )}
         {[...Array(emptyStars)].map(
           (_, index) =>
             emptyStars > 0 && (
-              <img src={emptyStar} key={index} alt='empty star' />
+              <img src={emptyStar} key={index} alt="empty star" />
             )
         )}
       </div>
