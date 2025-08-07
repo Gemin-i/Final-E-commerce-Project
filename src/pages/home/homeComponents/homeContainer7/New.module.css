@@ -3,4 +3,14 @@
   max-width: calc(100% - 240px);
   margin: 0 auto;
   padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
