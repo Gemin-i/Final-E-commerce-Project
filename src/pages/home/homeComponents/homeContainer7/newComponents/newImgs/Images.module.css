@@ -3,6 +3,7 @@
     height: 600px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 140px;
 }
 
 .img1 {
@@ -65,4 +66,31 @@
     width: 270px;
     height: 284px;
     background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.img3 .texts {
+    position: absolute;
+    top: 165px;
+    left: 24px;
+}
+
+.img3 img {
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    width: 238px;
+    height: 238px;
+}
+
+.blur {
+    width: 238px;
+    height: 238px;
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    filter: blur(140px);
+    background-color: rgba(217, 217, 217, 0.9);
+    border-radius: 200px;
 }

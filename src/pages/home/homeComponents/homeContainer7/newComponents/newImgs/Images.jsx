@@ -18,8 +18,12 @@ const newArrival = [
     title: "Women’s Collections",
     description: "Featured woman collections that give you another vibe.",
   },
-  { image: speakers, title: "", description: "" },
-  { image: perfume, title: "", description: "" },
+  {
+    image: speakers,
+    title: "Speakers",
+    description: "Amazon wireless speakers",
+  },
+  { image: perfume, title: "Perfume", description: "GUCCI INTENSE OUD EDP" },
 ]; // Placeholder for actual data
 
 function Images() {
@@ -46,7 +50,8 @@ function Images() {
           </div>
           <div className={styles.container3}>
             <div className={styles.img3}>
-              <img src="1" alt="" />
+              <div className={styles.blur}></div>
+              <img src={speakers} alt="" />
               <div className={styles.texts}>
                 <ImageTexts
                   title={newArrival[2].title}
@@ -55,7 +60,8 @@ function Images() {
               </div>
             </div>
             <div className={styles.img3}>
-              <img src="1" alt="" />
+              <div className={styles.blur}></div>
+              <img src={perfume} alt="" />
               <div className={styles.texts}>
                 <ImageTexts
                   title={newArrival[3].title}
