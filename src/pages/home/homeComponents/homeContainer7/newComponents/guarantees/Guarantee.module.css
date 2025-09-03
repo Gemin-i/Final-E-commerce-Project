@@ -2,6 +2,7 @@
     width: 943px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 140px;
 }
 
 .guarantee {

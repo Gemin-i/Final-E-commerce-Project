@@ -11,8 +11,13 @@
     position : relative;
     top: 137px;
     width: 100%;
+    min-height: 100vh;
 }
 
-.layout {
-    height: 500vh;
+.footer {
+    height: 440px;
+    position: static;
+    margin-top: 137px;
+    background-color: black;
 }
+

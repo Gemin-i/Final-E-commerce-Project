@@ -1,8 +1,32 @@
+import { memo } from "react";
+
 import styles from "./Footer.module.css";
 
-function Footer() {
+import sendIcon from "../../assets/imgs/footer/send.svg";
 
-    const Columns = {firstColumn: {title: "", subtitle: "", text: ""}, centerColumns: [
+import qrCode from "../../assets/imgs/footer/qrCode.svg";
+import appStore from "../../assets/imgs/footer/appStore.svg";
+import googlePlay from "../../assets/imgs/footer/googlePlay.svg";
+
+import facebook from "../../assets/imgs/footer/facebook.svg";
+import instagram from "../../assets/imgs/footer/instagram.svg";
+import twitter from "../../assets/imgs/footer/twitter.svg";
+import linkedin from "../../assets/imgs/footer/linkedin.svg";
+
+import Columns from "./footerComponents/Columns";
+
+function Footer() {
+  const data = [
+    {
+      firstColumn: {
+        title: "Exclusive",
+        subTitle: "Subscribe",
+        text: "Get 10% off your first order",
+        img: sendIcon,
+      },
+    },
+    {
+      centerColumns: [
         {
           title: "Support",
           rows: [
@@ -19,13 +43,28 @@ function Footer() {
           title: "Quick Link",
           rows: ["Privacy Policy", "Terms Of Use", "FAQ", "Contact"],
         },
-      ] lastColumn: {title: "", text: "", icons: [], imgs: {QR: "", other: ""}}};
+      ],
+    },
+    {
+      lastColumn: {
+        title: "Download App",
+        text: "Save $3 with App New User Only",
+        imgs: { qrCode: qrCode, appStore: appStore, googlePlay: googlePlay },
+        icons: {
+          facebook: facebook,
+          twitter: twitter,
+          instagram: instagram,
+          linkedin: linkedin,
+        },
+      },
+    },
+  ];
 
-    return (
-        <div className={styles.container1}>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    )
+  return (
+    <div className={styles.footer}>
+      <Columns data={data} />
+    </div>
+  );
 }
+
+export default memo(Footer);
