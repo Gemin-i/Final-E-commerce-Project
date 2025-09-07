@@ -11,6 +11,7 @@ import eye from "../../../../../assets/imgs/home/eye.svg";
 import heart from "../../../../../assets/imgs/home/heart.svg";
 import Details from "../../containerComponents/productDetails/Details";
 import Rating from "../../containerComponents/rating/Rating";
+import { Link } from "react-router-dom";
 
 function Products() {
   let products = [
@@ -52,19 +53,19 @@ function Products() {
       <ul className={styles.container}>
         {products.map((product) => (
           <li key={product.id}>
-            <div className={styles.product}>
+            <Link className={styles.product} to={`/view/${product.id}`}>
               <img src={product.img} alt="" />
-              <div className={styles.buttons}>
+              <div className={styles.addToCart}>
+                <p>Add To Cart</p>
+              </div>
+            </Link>
+            <div key={product.id} className={styles.buttons}>
                 <Button route={"/wishlist"} className={"heart"}>
                   {heart}
                 </Button>
                 <Button route={"/quickView"} className={"eye"}>
                   {eye}
                 </Button>
-              </div>
-              <div className={styles.addToCart}>
-                <p>Add To Cart</p>
-              </div>
             </div>
             <Details homeContainer2={true} product={product} />
           </li>

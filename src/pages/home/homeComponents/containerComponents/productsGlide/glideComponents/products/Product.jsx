@@ -7,6 +7,7 @@ import Details from "../../../../containerComponents/productDetails/Details";
 import heart from "../../../../../../../assets/imgs/home/heart.svg";
 import eye from "../../../../../../../assets/imgs/home/eye.svg";
 import LoadAll from "../LoadAll";
+import { Link } from "react-router-dom";
 
 
 function Product({product}) {
@@ -14,13 +15,13 @@ function Product({product}) {
   return (
     <div className={styles.invisDiv}>
       <div className={styles.imgContainer}>
-        <div className={styles.imgContainer2}>
+        <Link className={styles.imgContainer2} to={`/view/${product.id}`}>
           <img
             className={styles.productImg}
             src={product.img}
             alt={product.name}
           />
-        </div>
+        </Link>
         <div className={styles.addToCart}>
           <p>Add To Cart</p>
         </div>

@@ -27,6 +27,7 @@ function App() {
               <Route path="/signUp" element={<SignUp />}></Route>
               <Route path="/wishlist" element={<Wishlist/>}></Route>
               <Route path="/category/:name" element={<Category />}></Route>
+              <Route path="/view/:productId" element={""}></Route>
             </Route>
           </Routes>
         </Router>
