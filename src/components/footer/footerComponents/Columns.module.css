@@ -24,7 +24,12 @@
 .imgContainer2 {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0px;
+    height: fit-content;
+}
+
+.appleLink {
+    margin-top: 5px;
 }
 
 .iconsContainer {
@@ -135,6 +140,10 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.centerColTexts a {
+    text-decoration: none;
 }
 
 .lastColTexts {

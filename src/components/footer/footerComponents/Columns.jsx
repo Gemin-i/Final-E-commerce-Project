@@ -14,8 +14,12 @@ function Columns({ data }) {
       <div className={styles.col1}>
         <div className={styles.col1Texts}>
           <div className={styles.col1Titles}>
-            <Link to={'/exclusive'} className={styles.logo}>{data[0].firstColumn.title}</Link>
-            <Link to={'/subscribe'} className={styles.subTitle}>{data[0].firstColumn.subTitle}</Link>
+            <Link to={"/exclusive"} className={styles.logo}>
+              {data[0].firstColumn.title}
+            </Link>
+            <Link to={"/subscribe"} className={styles.subTitle}>
+              {data[0].firstColumn.subTitle}
+            </Link>
           </div>
           <p className={styles.text}>{data[0].firstColumn.text}</p>
         </div>
@@ -36,11 +40,26 @@ function Columns({ data }) {
         <div className={styles.centerColumn} key={column.title}>
           <h1 className={styles.title}>{column.title}</h1>
           <div className={styles.centerColTexts}>
-            {column.rows.map((row, index) => (
-            <p className={styles.text} key={row}>
-              {row}
-            </p>
-            ))}
+            {column.rows.map((row, index2) =>
+              index === 0 ? (
+                <p className={styles.text} key={row}>
+                  {row}
+                </p>
+              ) : (
+                <Link
+                  key={row}
+                  className={styles.text}
+                  to={`/${row
+                    .replace("/", "")
+                    .split(/\s+/)
+                    .join("-")
+                    .toLowerCase()}`}
+                >
+                  {" "}
+                  {row}{" "}
+                </Link>
+              )
+            )}
           </div>
         </div>
       ))}
@@ -52,17 +71,35 @@ function Columns({ data }) {
         <div className={styles.imgContainer}>
           <img src={data[2].lastColumn.imgs.qrCode} alt="" />
           <div className={styles.imgContainer2}>
-            <img src={data[2].lastColumn.imgs.appStore} alt="" />
-            <img src={data[2].lastColumn.imgs.googlePlay} alt="" />
+            <a
+              className={styles.appleLink}
+              href="https://apps.apple.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={data[2].lastColumn.imgs.appStore} alt="" />
+            </a>
+            <a
+              href="https://play.google.com/store"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={data[2].lastColumn.imgs.googlePlay} alt="" />
+            </a>
           </div>
-            
         </div>
         <div className={styles.iconsContainer}>
           <div className={styles.icons}>
-            <img src={data[2].lastColumn.icons.facebook} alt="" />
-            <img src={data[2].lastColumn.icons.twitter} alt="" />
-            <img src={data[2].lastColumn.icons.instagram} alt="" />
-            <img src={data[2].lastColumn.icons.linkedin} alt="" />
+            {data[2].lastColumn.socialMedias.map((socialMedia) => (
+              <a
+                key={socialMedia.name}
+                href={`https://www.${socialMedia.name}.com/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={socialMedia.icon} alt="" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

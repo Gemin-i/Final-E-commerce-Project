@@ -50,12 +50,12 @@ function Footer() {
         title: "Download App",
         text: "Save $3 with App New User Only",
         imgs: { qrCode: qrCode, appStore: appStore, googlePlay: googlePlay },
-        icons: {
-          facebook: facebook,
-          twitter: twitter,
-          instagram: instagram,
-          linkedin: linkedin,
-        },
+        socialMedias: [
+          {icon: facebook, name: "facebook"},
+          {icon: twitter, name: "twitter"},
+          {icon: instagram, name: "instagram"},
+          {icon: linkedin, name: "linkedin"},
+      ],
       },
     },
   ];
